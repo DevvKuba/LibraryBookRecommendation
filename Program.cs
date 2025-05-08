@@ -6,10 +6,11 @@ namespace LibraryBookRecommendation
         static async Task Main(string[] args)
         {
             ApiCaller bookData = new ApiCaller();
-
             LibraryClerk libraryClerk = new LibraryClerk();
             User userOne = new User("Kuba");
-            await libraryClerk.PrintTenBooksOfInterest(bookData);
+
+            Dictionary<string,string> chosenBooks = await libraryClerk.PrintTenBooksOfInterest(bookData);
+            userOne.BorrowBook(chosenBooks);
 
 
         }
