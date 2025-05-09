@@ -9,8 +9,11 @@ namespace LibraryBookRecommendation
             LibraryClerk libraryClerk = new LibraryClerk();
             User userOne = new User("Kuba");
 
-            Dictionary<string,string> chosenBooks = await libraryClerk.PrintTenBooksOfInterest(bookData);
+            Dictionary<string, string> chosenBooks = await libraryClerk.PrintTenBooksOfInterest(bookData);
             userOne.BorrowBook(chosenBooks);
+            userOne.BorrowBook(chosenBooks);
+            userOne.BorrowBook(chosenBooks);
+            userOne.SetUpFavouriteBooks();
 
 
         }
